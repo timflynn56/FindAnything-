@@ -1,0 +1,566 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="FindAnything helps shoppers search marketplaces, compare prices, analyze deals and discover bargains.">
+<title>FindAnything | Search. Compare. Analyze. Deal.</title>
+<style>
+:root{
+--green:#19f20b;
+--lime:#b7ff36;
+--bg:#050807;
+--panel:#111a15;
+--line:#31503a;
+--muted:#a9b7ae;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+margin:0;
+background:var(--bg);
+color:#fff;
+font-family:Arial,Helvetica,sans-serif;
+line-height:1.6;
+}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+header{
+position:sticky;top:0;z-index:20;
+background:rgba(5,8,7,.95);
+border-bottom:1px solid #25362b;
+backdrop-filter:blur(12px);
+}
+nav{
+max-width:1150px;margin:auto;
+padding:15px 5%;
+display:flex;align-items:center;
+justify-content:space-between;gap:15px;
+}
+.logo{font-size:23px;font-weight:900}
+.logo span{color:var(--green)}
+.tagline{
+font-size:10px;letter-spacing:2px;
+color:var(--green);font-weight:bold;
+}
+.navlinks{display:flex;gap:17px;font-size:13px}
+.navlinks a:hover{color:var(--green)}
+main{overflow:hidden}
+section{padding:70px 6%}
+.container{max-width:1100px;margin:auto}
+.hero{
+min-height:650px;
+display:flex;align-items:center;
+background:
+radial-gradient(ellipse at 70% 45%,#164c1c 0%,transparent 48%),
+linear-gradient(135deg,#050807,#0b1b11,#050807);
+position:relative;
+}
+.hero:after{
+content:"";position:absolute;inset:0;
+background:repeating-linear-gradient(
+0deg,transparent,transparent 49px,
+rgba(40,255,40,.035) 50px);
+pointer-events:none;
+}
+.hero .container{position:relative;z-index:1;width:100%}
+.eyebrow{
+color:var(--green);font-weight:900;
+letter-spacing:4px;font-size:13px;
+}
+h1{
+font-size:clamp(48px,9vw,100px);
+line-height:1.02;margin:20px 0;
+letter-spacing:-3px;
+}
+h1 span,.accent{color:var(--green)}
+h2{
+font-size:clamp(30px,5vw,48px);
+line-height:1.15;margin:10px 0 18px;
+}
+h3{font-size:21px;margin:10px 0}
+p{color:var(--muted)}
+.lead{font-size:19px;max-width:690px}
+.actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.btn{
+display:inline-block;padding:15px 25px;
+border-radius:12px;font-weight:900;
+text-align:center;cursor:pointer;
+border:1px solid var(--green);
+}
+.primary{
+background:var(--green);color:#061008;
+box-shadow:0 0 32px #19f20455;
+}
+.secondary{color:var(--green);background:#101b12}
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;margin-top:35px;
+}
+.card{
+background:linear-gradient(145deg,#17221a,#0c120e);
+border:1px solid var(--line);
+border-radius:22px;padding:26px;
+}
+.card p{margin-bottom:0}
+.number{color:var(--green);font-size:38px;font-weight:900}
+.dark{background:#0a100c}
+.center{text-align:center}
+.center p{max-width:680px;margin:12px auto}
+.demo{
+max-width:780px;margin:35px auto;
+padding:25px;border:1px solid var(--green);
+border-radius:25px;background:#101a12;
+box-shadow:0 0 45px #18f20a1b;
+}
+.demo input{
+width:100%;padding:17px 20px;
+border:1px solid #4b6550;
+border-radius:15px;background:#242b26;
+color:#fff;margin:15px 0;
+}
+.sources{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.source{
+padding:9px 14px;background:#203324;
+border-radius:20px;color:var(--lime);
+font-size:13px;font-weight:bold;
+}
+.note{font-size:12px;color:#a5b4a8}
+.battle{
+display:grid;grid-template-columns:1fr 85px 1fr;
+gap:12px;align-items:center;margin-top:35px;
+}
+.battle .card{min-height:215px}
+.vs{
+font-size:43px;color:var(--green);
+font-weight:900;text-align:center;
+text-shadow:0 0 25px #19f20b;
+}
+.score{font-size:36px;font-weight:900;color:var(--green)}
+.guide-tag{
+color:var(--green);font-size:12px;
+font-weight:900;letter-spacing:2px;
+}
+ul{padding-left:22px;color:var(--muted)}
+li{margin:9px 0}
+.price{font-size:48px;color:var(--lime);font-weight:900}
+.highlight{border-color:var(--green)}
+footer{
+padding:45px 6%;border-top:1px solid var(--line);
+background:#080d09;text-align:center;
+}
+footer p{font-size:13px}
+details{
+border:1px solid var(--line);
+border-radius:14px;padding:18px;
+margin:12px 0;background:#101812;
+}
+summary{cursor:pointer;font-weight:bold}
+@media(max-width:750px){
+.navlinks{gap:10px;font-size:11px;flex-wrap:wrap;justify-content:flex-end}
+.logo{font-size:18px}
+.tagline{font-size:8px;letter-spacing:1px}
+.hero{min-height:570px}
+section{padding:55px 5%}
+.grid{grid-template-columns:1fr}
+.battle{grid-template-columns:1fr}
+.vs{padding:5px}
+h1{letter-spacing:-2px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+<div>
+<div class="logo"><span>◎</span> FindAnything</div>
+<div class="tagline">SEARCH · COMPARE · ANALYZE · DEAL</div>
+</div>
+<div class="navlinks">
+<a href="#how">How It Works</a>
+<a href="#guides">Guides</a>
+<a href="#battle">Battle</a>
+<a href="#pro">Pro</a>
+</div>
+</nav>
+</header>
+
+<main>
+
+<section class="hero">
+<div class="container">
+<div class="eyebrow">THE FUTURE OF BARGAIN HUNTING</div>
+<h1>FIND IT.<br>COMPARE IT.<br><span>WIN THE DEAL.</span></h1>
+<p class="lead">
+One shopping mission. Multiple marketplaces.
+FindAnything helps you discover listings, compare
+asking prices, evaluate bargains and decide
+which deal deserves your money.
+</p>
+<div class="actions">
+<a class="btn primary" href="#how">EXPLORE FINDANYTHING</a>
+<a class="btn secondary" href="#battle">DISCOVER DEAL BATTLE</a>
+</div>
+<p class="note">FindAnything is an independent shopping discovery platform.</p>
+</div>
+</section>
+
+<section id="how">
+<div class="container">
+<div class="eyebrow">YOUR SHOPPING ADVANTAGE</div>
+<h2>One search. More possibilities.</h2>
+<p>
+Shopping across different websites takes time.
+FindAnything brings the discovery process together
+so you can focus on finding value.
+</p>
+<div class="grid">
+<div class="card">
+<div class="number">01</div>
+<h3>Search</h3>
+<p>Search supported marketplaces for vehicles, electronics, tools, clothing, furniture and more.</p>
+</div>
+<div class="card">
+<div class="number">02</div>
+<h3>Analyze</h3>
+<p>Review asking price, condition, listing details and potential risks with AI-assisted deal analysis.</p>
+</div>
+<div class="card">
+<div class="number">03</div>
+<h3>Compare</h3>
+<p>Save interesting listings and put two potential purchases head-to-head in Deal Battle.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="dark" id="marketplaces">
+<div class="container center">
+<div class="eyebrow">MARKETPLACE DISCOVERY</div>
+<h2>Search beyond one marketplace.</h2>
+<p>Explore shopping opportunities from multiple sources using FindAnything's marketplace workflow.</p>
+<div class="demo">
+<h3>What are you looking for?</h3>
+<input id="searchTerm" placeholder="Try Ford F150, iPhone, tractor, tools...">
+<button class="btn primary" style="width:100%" onclick="searchEbay()">SEARCH EBAY LISTINGS</button>
+<div class="sources">
+<span class="source">eBay Goods</span>
+<span class="source">eBay Motors</span>
+<span class="source">Facebook Marketplace</span>
+<span class="source">Craigslist</span>
+<span class="source">OfferUp</span>
+<span class="source">Mercari</span>
+</div>
+<p class="note">
+This website's search demonstration opens eBay.
+The FindAnything mobile app provides the broader marketplace workflow.
+</p>
+</div>
+</div>
+</section>
+
+<section id="battle">
+<div class="container">
+<div class="eyebrow">THE MAIN EVENT</div>
+<h2>DEAL <span class="accent">BATTLE</span></h2>
+<p class="lead">
+Two listings enter. One gets the advantage.
+Compare prices, condition, value and available information
+to help choose the stronger purchase.
+</p>
+<div class="battle">
+<div class="card">
+<div class="guide-tag">CONTENDER A</div>
+<h3>Used Pickup Truck</h3>
+<p>Asking price</p>
+<div class="score">$12,000</div>
+<p>Higher price, potentially better condition.</p>
+</div>
+<div class="vs">VS</div>
+<div class="card">
+<div class="guide-tag">CONTENDER B</div>
+<h3>Used Pickup Truck</h3>
+<p>Asking price</p>
+<div class="score">$9,500</div>
+<p>Lower price, but condition needs investigation.</p>
+</div>
+</div>
+<p class="note center">
+Illustrative example only. A lower price does not automatically mean a better deal.
+</p>
+<div class="center">
+<h3>Price is only part of the battle.</h3>
+<p>FindAnything helps weigh the information available and explain the reasoning behind a comparison. Scores are estimates, not guarantees.</p>
+</div>
+</div>
+</section>
+
+<section class="dark" id="guides">
+<div class="container">
+<div class="eyebrow">FINDANYTHING SHOPPING ACADEMY</div>
+<h2>Shop smarter. Spend less.</h2>
+<p>Original buying guides to help you identify value and avoid common shopping mistakes.</p>
+<div class="grid">
+
+<article class="card">
+<div class="guide-tag">VEHICLE BUYING GUIDE</div>
+<h3>How to Find a Good Used Truck</h3>
+<p>Used trucks can look great in photos while hiding expensive mechanical problems.</p>
+<ul>
+<li>Compare similar model years, mileage and trim levels.</li>
+<li>Inspect frame corrosion and accident history.</li>
+<li>Review service records and tire wear.</li>
+<li>Budget for repairs before making an offer.</li>
+<li>Arrange an independent inspection when possible.</li>
+</ul>
+</article>
+
+<article class="card">
+<div class="guide-tag">ELECTRONICS GUIDE</div>
+<h3>Buying a Used iPhone</h3>
+<p>A low asking price is not enough to prove a phone is a bargain.</p>
+<ul>
+<li>Check battery health and physical condition.</li>
+<li>Confirm Activation Lock is removed.</li>
+<li>Verify the device is not carrier-blocked.</li>
+<li>Compare storage capacity and model generation.</li>
+<li>Test cameras, speakers and charging.</li>
+</ul>
+</article>
+
+<article class="card">
+<div class="guide-tag">TOOLS & EQUIPMENT</div>
+<h3>Used Tools Worth Considering</h3>
+<p>Quality used tools can offer substantial savings when condition is verified.</p>
+<ul>
+<li>Inspect motors, batteries and moving parts.</li>
+<li>Check replacement-part availability.</li>
+<li>Compare used prices against new retail prices.</li>
+<li>Test equipment before purchasing.</li>
+<li>Consider warranty and return-policy differences.</li>
+</ul>
+</article>
+
+<article class="card">
+<div class="guide-tag">FARM EQUIPMENT</div>
+<h3>Shopping for a Used Tractor</h3>
+<p>Buying the right tractor means looking beyond horsepower.</p>
+<ul>
+<li>Check operating hours and maintenance records.</li>
+<li>Inspect hydraulics, tires and loader wear.</li>
+<li>Confirm attachments are compatible.</li>
+<li>Review local dealer and parts support.</li>
+<li>Estimate transportation and repair costs.</li>
+</ul>
+</article>
+
+<article class="card">
+<div class="guide-tag">BARGAIN HUNTING</div>
+<h3>How to Spot an Overpriced Listing</h3>
+<p>Compare like-for-like products rather than relying on the seller's original purchase price.</p>
+<ul>
+<li>Match exact models and specifications.</li>
+<li>Account for age and condition.</li>
+<li>Include shipping, taxes and fees.</li>
+<li>Look at sold prices when available.</li>
+<li>Watch for suspiciously low prices and scams.</li>
+</ul>
+</article>
+
+<article class="card">
+<div class="guide-tag">NEGOTIATION GUIDE</div>
+<h3>Make a Better Offer</h3>
+<p>A thoughtful offer is more effective than simply asking for the lowest price.</p>
+<ul>
+<li>Research comparable asking and sold prices.</li>
+<li>Identify specific condition concerns.</li>
+<li>Offer a fair price supported by evidence.</li>
+<li>Communicate clearly and respectfully.</li>
+<li>Be prepared to walk away.</li>
+</ul>
+</article>
+
+</div>
+</div>
+</section>
+
+<section id="comparison">
+<div class="container">
+<div class="eyebrow">SMART SHOPPING DECISIONS</div>
+<h2>New vs. Used: Which is the better deal?</h2>
+<div class="grid">
+<div class="card">
+<h3>Buying New</h3>
+<ul>
+<li>Manufacturer warranty may be included.</li>
+<li>Known condition and full product life.</li>
+<li>Usually higher purchase price.</li>
+<li>Retailer return policies may help.</li>
+</ul>
+</div>
+<div class="card">
+<h3>Buying Used</h3>
+<ul>
+<li>Potentially lower purchase price.</li>
+<li>Condition varies between sellers.</li>
+<li>Warranty coverage may be limited.</li>
+<li>Inspection and research matter more.</li>
+</ul>
+</div>
+<div class="card highlight">
+<h3>FindAnything Approach</h3>
+<ul>
+<li>Compare total cost, not just sticker price.</li>
+<li>Account for age and condition.</li>
+<li>Consider risk and repair expenses.</li>
+<li>Choose the best overall value.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section class="dark" id="pro">
+<div class="container center">
+<div class="eyebrow">UNLOCK MORE INTELLIGENCE</div>
+<h2>FindAnything <span class="accent">PRO</span></h2>
+<p>Advanced shopping intelligence for people who love finding great deals.</p>
+<div class="grid" style="text-align:left">
+<div class="card">
+<h3>FREE</h3>
+<div class="price">$0</div>
+<ul>
+<li>Supported marketplace searches</li>
+<li>Marketplace launch links</li>
+<li>Saved listings and favorites</li>
+<li>Basic shopping discovery tools</li>
+</ul>
+</div>
+<div class="card highlight">
+<h3 style="color:var(--lime)">FindAnything Pro</h3>
+<div class="price">$5.99<small style="font-size:17px">/month</small></div>
+<ul>
+<li>AI-assisted deal analysis</li>
+<li>Advanced comparisons and Deal Battle</li>
+<li>Negotiation guidance</li>
+<li>Resale and repair considerations</li>
+<li>Additional premium features as available</li>
+</ul>
+<p class="note">Feature availability may change. Subscription purchasing is not available on this website.</p>
+</div>
+<div class="card">
+<h3>Why Pro?</h3>
+<p>FindAnything Pro is designed for shoppers who want more than a list of products.</p>
+<p>Its goal is to help answer one important question:</p>
+<h3 class="accent">Is this actually a good deal?</h3>
+</div>
+</div>
+</div>
+</section>
+
+<section id="amazon">
+<div class="container">
+<div class="eyebrow">SHOPPING & AFFILIATE PARTNERS</div>
+<h2>Amazon Shopping</h2>
+<p>
+FindAnything is developing additional ways for shoppers
+to research products and compare new retail options
+with used marketplace listings.
+</p>
+<p>
+Amazon product integration is planned and is subject
+to API access, program eligibility and applicable policies.
+Live Amazon product results are not yet available here.
+</p>
+<div class="card">
+<h3>Affiliate Disclosure</h3>
+<p>
+As an Amazon Associate I earn from qualifying purchases.
+</p>
+<p class="note">
+Some future links on this website may be affiliate links.
+We may earn a commission when qualifying purchases are made,
+at no additional cost to you.
+</p>
+</div>
+</div>
+</section>
+
+<section class="dark" id="faq">
+<div class="container">
+<div class="eyebrow">FREQUENTLY ASKED QUESTIONS</div>
+<h2>Know before you search.</h2>
+
+<details>
+<summary>What is FindAnything?</summary>
+<p>FindAnything is a shopping discovery app designed to help users search supported marketplaces, save listings, analyze potential deals and compare products.</p>
+</details>
+
+<details>
+<summary>Does FindAnything sell the products?</summary>
+<p>No. FindAnything is not the seller of third-party marketplace listings. Purchases and transactions take place with the relevant marketplace or seller.</p>
+</details>
+
+<details>
+<summary>Does the AI guarantee a good deal?</summary>
+<p>No. AI analysis is an estimate based on available listing information. Buyers should independently verify product condition, seller legitimacy and pricing.</p>
+</details>
+
+<details>
+<summary>What is Deal Battle?</summary>
+<p>Deal Battle compares two saved listings and helps explain which one may offer better value based on the information available.</p>
+</details>
+
+<details>
+<summary>Is FindAnything Pro required?</summary>
+<p>Basic shopping discovery is intended to remain free. Advanced AI-assisted features are part of the Pro offering.</p>
+</details>
+
+</div>
+</section>
+
+<section class="center">
+<div class="container">
+<div class="eyebrow">YOUR NEXT GREAT DEAL IS OUT THERE</div>
+<h2>STOP SCROLLING.<br><span class="accent">START FINDING.</span></h2>
+<p>Search smarter. Compare confidently. Make every shopping decision count.</p>
+<div class="actions" style="justify-content:center">
+<a href="#marketplaces" class="btn primary">START EXPLORING</a>
+<a href="#guides" class="btn secondary">READ SHOPPING GUIDES</a>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="logo"><span>◎</span> FindAnything</div>
+<div class="tagline">SEARCH · COMPARE · ANALYZE · DEAL</div>
+<p>Independent marketplace discovery and shopping research.</p>
+<p>As an Amazon Associate I earn from qualifying purchases.</p>
+<p>Third-party marketplace names and trademarks belong to their respective owners. FindAnything is not affiliated with or endorsed by those marketplaces.</p>
+<p>© 2026 FindAnything. All rights reserved.</p>
+</footer>
+
+<script>
+function searchEbay(){
+const term=document.getElementById("searchTerm").value.trim();
+if(!term){
+alert("Enter something you want to find.");
+return;
+}
+window.open(
+"https://www.ebay.com/sch/i.html?_nkw="+encodeURIComponent(term),
+"_blank","noopener,noreferrer"
+);
+}
+document.getElementById("searchTerm").addEventListener("keydown",function(e){
+if(e.key==="Enter")searchEbay();
+});
+</script>
+
+</body>
+</html>
