@@ -755,3 +755,27 @@ if(img.complete && img.naturalWidth===0)fallback();
 </script>
 </body>
 </html>
+
+<script>
+const realScreenshots = {
+  "home.webp": "IMG_1761.png",
+  "search.webp": "IMG_1762.png",
+  "favorite.webp": "IMG_1795.jpeg",
+  "battle.webp": "IMG_1750.png",
+  "battle-trucks.webp": "IMG_1716.png",
+  "winner.webp": "IMG_1714.png",
+  "pro.webp": "IMG_1752.png",
+  "tools.webp": "IMG_1562.jpeg"
+};
+
+document.querySelectorAll(".shot img").forEach(img => {
+  const filename = img.getAttribute("src").split("/").pop();
+  if (realScreenshots[filename]) {
+    img.src = "assets/images/" + realScreenshots[filename];
+    img.style.display = "block";
+    if (img.nextElementSibling) {
+      img.nextElementSibling.style.display = "none";
+    }
+  }
+});
+</script>
