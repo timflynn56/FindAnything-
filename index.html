@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FindAnything helps shoppers discover bargains, compare marketplace listings, and analyze deals with AI.">
+  <title>FindAnything | Search. Compare. Analyze. Deal.</title>
+  <style>
+    :root {
+      --green: #77ff55;
+      --dark: #080b09;
+      --panel: #151d17;
+      --muted: #b7c2b9;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--dark);
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: var(--green); }
+    header {
+      padding: 22px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #263528;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--green);
+      letter-spacing: -1px;
+    }
+    nav a {
+      margin-left: 16px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .hero {
+      text-align: center;
+      padding: 90px 20px 80px;
+      background:
+        radial-gradient(ellipse at top, #194e26 0%, transparent 65%),
+        var(--dark);
+    }
+    .eyebrow {
+      color: var(--green);
+      font-size: 13px;
+      letter-spacing: 3px;
+      font-weight: bold;
+    }
+    h1 {
+      font-size: clamp(42px, 8vw, 76px);
+      line-height: 1.1;
+      margin: 20px auto;
+      max-width: 900px;
+    }
+    h1 span, h2 span { color: var(--green); }
+    .hero p {
+      max-width: 650px;
+      margin: 20px auto;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 30px;
+      border-radius: 10px;
+      background: var(--green);
+      color: #061006;
+      text-decoration: none;
+      font-weight: 800;
+    }
+    .tagline {
+      margin-top: 32px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: var(--green);
+    }
+    section {
+      padding: 65px 6%;
+      max-width: 1150px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      font-size: clamp(28px, 5vw, 42px);
+      margin: 0 0 15px;
+    }
+    .intro {
+      text-align: center;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto 35px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      padding: 28px;
+      background: var(--panel);
+      border: 1px solid #2c4931;
+      border-radius: 16px;
+    }
+    .card .symbol { font-size: 32px; }
+    .card h3 { color: var(--green); }
+    .card p { color: var(--muted); }
+    .marketplaces {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .marketplaces span {
+      padding: 12px 18px;
+      background: var(--panel);
+      border: 1px solid #345039;
+      border-radius: 10px;
+    }
+    .highlight {
+      background: linear-gradient(135deg, #173c20, #101810);
+      border: 1px solid #3e7548;
+      border-radius: 20px;
+      text-align: center;
+      padding: 40px 25px;
+    }
+    footer {
+      padding: 35px 20px;
+      border-top: 1px solid #263528;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media (max-width: 500px) {
+      header { flex-direction: column; gap: 10px; }
+      nav a { margin: 0 8px; }
+      .hero { padding-top: 65px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">✦ FindAnything</div>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#marketplaces">Marketplaces</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="eyebrow">THE FUTURE OF BARGAIN HUNTING</div>
+    <h1>Find better deals.<br><span>Shop smarter.</span></h1>
+    <p>
+      Discover bargains across your favorite marketplaces.
+      Compare listings, analyze asking prices, and let AI
+      help you decide which deals are worth pursuing.
+    </p>
+    <a class="button" href="#features">Explore FindAnything</a>
+    <div class="tagline">SEARCH. COMPARE. ANALYZE. DEAL.</div>
+    <p><strong>Coming Soon to iPhone</strong></p>
+  </div>
+
+  <section id="features">
+    <h2>Meet Your New <span>Shopping Advantage</span></h2>
+    <p class="intro">
+      FindAnything brings marketplace discovery and
+      AI-powered bargain analysis into one experience.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="symbol">🔎</div>
+        <h3>Marketplace Search</h3>
+        <p>
+          Explore listings across popular marketplaces
+          using a streamlined search experience.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="symbol">🧠</div>
+        <h3>AI Deal Analyzer</h3>
+        <p>
+          Get a 0–10 deal score and helpful insights
+          about price, condition, and potential value.
+          Scores are estimates, not guarantees.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="symbol">⚡</div>
+        <h3>Deal Battle</h3>
+        <p>
+          Put two listings head-to-head.
+          Compare their strengths, weaknesses,
+          and overall value.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="symbol">❤️</div>
+        <h3>Saved Favorites</h3>
+        <p>
+          Keep interesting finds together so you
+          can revisit, analyze, and compare them.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="marketplaces">
+    <h2>More Places to <span>Find Deals</span></h2>
+    <p class="intro">
+      Explore products and listings from multiple
+      marketplaces. Availability and integration
+      methods vary by platform.
+    </p>
+
+    <div class="marketplaces">
+      <span>eBay</span>
+      <span>Facebook Marketplace</span>
+      <span>Craigslist</span>
+      <span>OfferUp</span>
+      <span>Mercari</span>
+      <span>Nextdoor</span>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="highlight">
+      <h2>Every Deal Has a <span>Story</span></h2>
+      <p>
+        Whether you're shopping for a truck, tractor,
+        electronics, tools, or everyday essentials,
+        FindAnything is designed to help you
+        make more informed buying decisions.
+      </p>
+      <p>
+        <strong>Currently in development.</strong>
+        Public release details will be announced later.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 FindAnything. All rights reserved.</p>
+  <p>
+    FindAnything is an independent shopping discovery app.
+    It is not affiliated with or endorsed by the
+    marketplaces mentioned on this website.
+  </p>
+</footer>
+
+</body>
+</html>
