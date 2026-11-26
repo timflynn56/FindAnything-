@@ -1,7 +1,12 @@
 .amazon-picks {
-  scroll-margin-top: 92px;
+  scroll-margin-top: 96px;
   border-block: 1px solid var(--line);
   background: radial-gradient(ellipse at 25% 0, #10271a, transparent 46%), #050807;
+}
+.amazon-picks-heading {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 23px;
+  margin-bottom: 24px;
 }
 .amazon-picks h2 { margin-bottom: 10px; }
 .amazon-picks-subtitle {
@@ -9,7 +14,7 @@
   font-size: clamp(1.05rem, 2vw, 1.25rem);
 }
 .amazon-picks-disclosure {
-  margin: 0 0 28px;
+  margin: 0;
   padding-left: 12px;
   border-left: 2px solid var(--green);
   color: #e0e8e2;
@@ -31,7 +36,7 @@
 .amazon-pick-art {
   aspect-ratio: 3 / 4;
   border-bottom: 1px solid var(--line);
-  background: #0b130e url("images/amazon-picks.png") var(--x) var(--y) / 400% 300% no-repeat;
+  background: #0b130e url("images/amazon-deals.png") var(--x) var(--y) / 400% 300% no-repeat;
 }
 .amazon-pick-body {
   display: flex;
@@ -40,13 +45,29 @@
   padding: 17px;
 }
 .amazon-pick h3 { margin: 0; font-size: 1.18rem; }
+.amazon-pick-category {
+  align-self: flex-start;
+  margin-bottom: 9px;
+  padding: 3px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--lime);
+  font-size: .875rem;
+  line-height: 1.35;
+}
 .amazon-pick p {
   margin: 9px 0 17px;
   font-size: 1rem;
   line-height: 1.45;
 }
-.amazon-pick-link {
+.amazon-pick-actions {
+  display: grid;
+  gap: 7px;
   margin-top: auto;
+  text-align: center;
+}
+.amazon-pick-paid { color: var(--muted); font-size: .875rem; }
+.amazon-pick-link {
   padding: 10px 12px;
 }
 .amazon-pick-link:focus-visible,
@@ -65,7 +86,7 @@ nav a[href="#amazon-picks"]:focus-visible {
 @media (max-width: 1000px) {
   .amazon-picks-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-@media (max-width: 640px) {
+@media (max-width: 760px) {
   .amazon-picks { scroll-margin-top: 128px; }
 }
 @media (max-width: 480px) {
