@@ -52,6 +52,31 @@ font-weight:bold;margin-top:5px;
 nav{display:flex;gap:20px;flex-wrap:wrap}
 nav a{font-size:13px;font-weight:bold}
 nav a:hover{color:var(--green)}
+.nav .beta-cta{flex:none;padding:10px 15px;font-size:.875rem;white-space:nowrap}
+.btn.beta-cta{
+animation:beta-glow 2.2s ease-in-out 2;
+box-shadow:0 0 14px #19f20b38;
+}
+.btn.beta-cta:hover{color:#041004;box-shadow:0 0 22px #19f20b70}
+.btn.beta-cta:focus-visible{outline:2px solid #fff;outline-offset:3px}
+@keyframes beta-glow{
+50%{box-shadow:0 0 24px #19f20b80}
+}
+#beta-signup{scroll-margin-top:94px}
+@media (max-width:760px){
+.nav{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;padding-block:10px}
+.nav nav{grid-column:1 / -1;grid-row:2;justify-content:center}
+.nav .beta-cta{grid-column:2;grid-row:1;justify-self:end}
+#beta-signup{scroll-margin-top:128px}
+}
+@media (max-width:360px){
+.nav .beta-cta{padding-inline:9px;font-size:.8rem}
+.nav .brand{gap:7px}
+}
+@media (prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+.btn.beta-cta{animation:none}
+}
 section{padding:70px 6%}
 .wrap{max-width:1150px;margin:auto}
 h1,h2,h3{line-height:1.15}
@@ -275,7 +300,7 @@ nav a{font-size:11px}
 .cards{grid-template-columns:1fr}
 .pricing{grid-template-columns:1fr}
 .guides{grid-template-columns:1fr}
-.battle{gap:8px}
+.battle{gap:8px;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)}
 .fighter{padding:13px}
 .fighter .score{font-size:28px}
 .vs{font-size:24px}
@@ -313,6 +338,7 @@ section{padding:55px 5%}
 <a href="#pro">Pro</a>
 <a href="#amazon-picks">Amazon Picks</a>
 </nav>
+<a class="btn beta-cta" href="#beta-signup">JOIN FREE BETA</a>
 </div>
 </header>
 
@@ -331,6 +357,7 @@ And a whole new way to battle bargains.
 </p>
 <div class="buttons">
 <a class="btn" href="#screenshots">SEE THE APP</a>
+<a class="btn beta-cta" href="#beta-signup">JOIN FREE BETA</a>
 <a class="btn outline" href="#battle">EXPLORE DEAL BATTLE</a>
 </div>
 <div class="stats">
@@ -886,7 +913,7 @@ border:1px solid #315b36;
 padding:25px;border-radius:20px;
 margin-top:25px">
 
-<form
+<form id="beta-signup"
 action="https://formsubmit.co/timflynn5656@gmail.com"
 method="POST">
 
