@@ -9,6 +9,7 @@
   const loadVideo = () => {
     error.hidden = true;
     video.hidden = false;
+    video.removeAttribute("data-started");
     video.src = video.dataset.src;
     video.load();
   };
@@ -38,6 +39,7 @@
     video.hidden = true;
     error.hidden = false;
   });
+  video.addEventListener("playing", () => { video.setAttribute("data-started", ""); });
   dialog.querySelector("#tutorial-retry").addEventListener("click", () => {
     loadVideo();
     video.focus();

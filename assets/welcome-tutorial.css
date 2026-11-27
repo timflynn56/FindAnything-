@@ -16,12 +16,18 @@ body:has(.welcome-tutorial[open]) { overflow: hidden; }
 .welcome-tutorial p { margin: 8px 0; }
 .welcome-tutorial .btn { min-height: 44px; padding: 8px 12px; }
 .welcome-tutorial video {
+  display: block;
   width: 100%;
+  height: auto;
+  aspect-ratio: 510 / 256;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #000;
+}
+.welcome-tutorial video[data-started] {
   height: min(48vh, 460px);
   height: min(48dvh, 460px);
   object-fit: contain;
-  border-radius: 8px;
-  background: #000;
 }
 .welcome-tutorial > .btn { margin-top: 12px; }
 #watch-demo[hidden], .welcome-tutorial [hidden] { display: none; }
