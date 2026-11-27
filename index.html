@@ -318,6 +318,8 @@ section{padding:55px 5%}
 }
 </style>
 <link rel="stylesheet" href="assets/amazon-picks.css">
+<link rel="stylesheet" href="assets/welcome-tutorial.css">
+<script src="assets/welcome-tutorial.js" defer></script>
 </head>
 <body>
 
@@ -357,9 +359,23 @@ And a whole new way to battle bargains.
 </p>
 <div class="buttons">
 <a class="btn" href="#screenshots">SEE THE APP</a>
+<button class="btn outline" type="button" id="watch-demo" aria-haspopup="dialog" hidden>Watch Demo</button>
 <a class="btn beta-cta" href="#beta-signup">JOIN FREE BETA</a>
 <a class="btn outline" href="#battle">EXPLORE DEAL BATTLE</a>
 </div>
+<dialog class="welcome-tutorial" id="welcome-tutorial" aria-labelledby="welcome-tutorial-title" aria-describedby="welcome-tutorial-note">
+<div class="welcome-tutorial-header">
+<h2 id="welcome-tutorial-title">Welcome to FindAnything</h2>
+<button class="btn outline" type="button" data-tutorial-close autofocus>Skip</button>
+</div>
+<p id="welcome-tutorial-note">Tap play to watch with narration.</p>
+<video controls playsinline preload="none" aria-label="FindAnything welcome tutorial" data-src="assets/findanything-tutorial.mp4"></video>
+<div id="tutorial-error" hidden>
+<p role="alert">The tutorial video couldn’t load.</p>
+<button class="btn outline" type="button" id="tutorial-retry">Retry video</button>
+</div>
+<button class="btn" type="button" data-tutorial-close>Continue to FindAnything</button>
+</dialog>
 <div class="stats">
 <div class="stat">
 <strong>6+</strong><span>Marketplace options</span>

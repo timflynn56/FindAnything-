@@ -1,0 +1,28 @@
+.welcome-tutorial {
+  width: min(92vw, 640px);
+  max-height: 90vh;
+  max-height: 90dvh;
+  padding: clamp(12px, 4vw, 24px);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel);
+  color: #fff;
+  overflow: auto;
+}
+.welcome-tutorial::backdrop { background: #000d; }
+body:has(.welcome-tutorial[open]) { overflow: hidden; }
+.welcome-tutorial-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.welcome-tutorial h2 { font-size: clamp(20px, 5vw, 30px); margin: 0; }
+.welcome-tutorial p { margin: 8px 0; }
+.welcome-tutorial .btn { min-height: 44px; padding: 8px 12px; }
+.welcome-tutorial video {
+  width: 100%;
+  height: min(48vh, 460px);
+  height: min(48dvh, 460px);
+  object-fit: contain;
+  border-radius: 8px;
+  background: #000;
+}
+.welcome-tutorial > .btn { margin-top: 12px; }
+#watch-demo[hidden], .welcome-tutorial [hidden] { display: none; }
+.welcome-tutorial :focus-visible, #watch-demo:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
